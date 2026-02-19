@@ -113,6 +113,12 @@
     "platform": "Thunderstore",
     "link": "https://thunderstore.io/c/peak/p/AtomicStudio/ChallengeCreator/"
   },
+  "Profile Cards": {
+    "community": "peak",
+    "popular": "False",
+    "platform": "Thunderstore",
+    "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Profile_Cards/"
+  }
   "Level Requirements": {
     "community": "among-us",
     "popular": "False",
@@ -124,5 +130,5 @@
     "popular": "False",
     "platform": "Thunderstore",
     "link": "https://thunderstore.io/c/yapyap/p/AtomicStudio/Starting_Gold/"
-  }
+  },
 }

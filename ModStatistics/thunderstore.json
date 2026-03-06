@@ -136,5 +136,11 @@
     "popular": "False",
     "platform": "Thunderstore",
     "link": "https://thunderstore.io/c/super-battle-golf/p/AtomicStudio/ModConfig/"
+  },
+  "ItemSpawner": {
+    "community": "super-battle-golf",
+    "popular": "False",
+    "platform": "Thunderstore",
+    "link": "https://thunderstore.io/c/super-battle-golf/p/AtomicStudio/ItemSpawner/"
   }
 }

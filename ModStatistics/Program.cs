@@ -14,8 +14,8 @@ using HttpClient client = new HttpClient();
 client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Compatible; ModStats/1.0)");
 
 bool getThunderstore = true;
-bool getSteam = true;
-bool getNexus = true;
+bool getSteam = false;
+bool getNexus = false;
 
 Console.WriteLine("/// --- /// MOD STATISTICS /// --- ///");
 
@@ -71,7 +71,7 @@ try
 
                     var mod = new Mod
                     {
-                        name = item.GetProperty("name").GetString() ?? "null",
+                        name = item.GetProperty("name").GetString().Replace("_", " ") ?? "null",
                         Downloads = downloads,
                         Ratings = ratings,
                         Version = extractedVersion,

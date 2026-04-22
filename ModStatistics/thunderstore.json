@@ -1,158 +1,18 @@
 {
-    "Better Shotgun Tooltip": {
-        "community": "lethal-company",
-        "popular": "True",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Better_Shotgun_Tooltip/"
-    },
-    "Moved Magnet Switch": {
-        "community": "lethal-company",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Moved_Magnet_Switch/"
-    },
-    "Atomics Cosmetics": {
-        "community": "lethal-company",
-        "popular": "True",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Atomics_Cosmetics/"
-    },
-    "Colorable CozyLights": {
-        "community": "lethal-company",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Colorable_CozyLights/"
-    },
-    "Atomics Suits": {
-        "community": "lethal-company",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/lethal-company/p/AtomicStudio/Atomics_Suits/"
-    },
-    "Breakable Windows": {
-        "community": "content-warning",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/content-warning/p/AtomicStudio/Breakable_Windows/"
-    },
-    "Charging Divebell": {
-        "community": "content-warning",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/content-warning/p/AtomicStudio/Charging_Divebell/"
-    },
-    "Toilet Paper Valuables": {
-        "community": "repo",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/repo/p/AtomicStudio/Toilet_Paper_Valuables/"
-    },
-    "Speedy Escalators": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Speedy_Escalators/"
-    },
-    "Atomics Cosmetics PEAK": {
-        "community": "peak",
-        "popular": "True",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Atomics_Cosmetics_PEAK/"
-    },
-    "Depleting Excess Extra Stamina": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Depleting_Excess_Extra_Stamina/"
-    },
-    "Green Screen": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Green_Screen/"
-    },
-    "Emote Binding": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Emote_Binding/"
-    },
-    "Launch Indicator": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Launch_Indicator"
-    },
-    "No Sash": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/No_Sash"
-    },
-    "Leveling": {
-        "community": "peak",
-        "popular": "True",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Leveling/"
-    },
-    "BetterScoutReport": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/BetterScoutReport/"
-    },
-    "Dance To Stay Warm": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Dance_To_Stay_Warm/"
-    },
-    "ChallengeCreator": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/ChallengeCreator/"
-    },
-    "Profile Cards": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Profile_Cards/"
-    },
-    "Eatable BingBong": {
-        "community": "peak",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/peak/p/AtomicStudio/Eatable_BingBong/"
-    },
-    "Level Requirements": {
-        "community": "among-us",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/among-us/p/AtomicStudio/Level_Requirements"
-    },
-    "Starting Gold": {
-        "community": "yapyap",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/yapyap/p/AtomicStudio/Starting_Gold/"
-    },
-    "ModConfig": {
-        "community": "super-battle-golf",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/super-battle-golf/p/AtomicStudio/ModConfig/"
-    },
-    "ItemSpawner": {
-        "community": "super-battle-golf",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/super-battle-golf/p/AtomicStudio/ItemSpawner/"
-    },
-    "Chat Integration": {
-        "community": "super-battle-golf",
-        "popular": "False",
-        "platform": "Thunderstore",
-        "link": "https://thunderstore.io/c/super-battle-golf/p/AtomicStudio/Chat_Integration"
+    "AtomicStudio": {
+        "communities": [
+            "lethal-company",
+            "content-warning",
+            "repo",
+            "peak",
+            "among-us",
+            "yapyap",
+            "super-battle-golf"
+        ],
+        "popular_identifiers": [
+            "AtomicStudio-Better_Shotgun_Tooltip",
+            "AtomicStudio-Atomics_Cosmetics",
+            "AtomicStudio-Leveling"
+        ]
     }
 }

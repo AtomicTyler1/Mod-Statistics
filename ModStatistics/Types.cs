@@ -25,6 +25,17 @@ namespace ModStatistics
         public string nexusModId { get; set; }
     }
 
+    public class ThunderstoreJSONContent
+    {
+        public List<string> communities { get; set; } = new();
+        public List<string> popular_identifiers { get; set; } = new();
+    }
+
+    public class ThunderstoreJSON
+    {
+        public Dictionary<string, ThunderstoreJSONContent> Content { get; set; } = new();
+    }
+
     public class GistData
     {
         public ulong total_downloads { get; set; }

@@ -5,7 +5,7 @@ namespace ModStatistics.Platforms
 {
     public static class Thunderstore
     {
-        public static Dictionary<string, Mod> GetThunderstoreMods()
+        public static Dictionary<string, ThunderstoreJSONContent> GetThunderstoreMods()
         {
             var assembly = Assembly.GetExecutingAssembly();
             var resourceName = assembly.GetManifestResourceNames()
@@ -18,22 +18,17 @@ namespace ModStatistics.Platforms
 
             using (Stream? stream = assembly.GetManifestResourceStream(resourceName))
             {
-                if (stream == null) return new Dictionary<string, Mod>();
+                if (stream == null) return new Dictionary<string, ThunderstoreJSONContent>();
 
                 using (StreamReader reader = new StreamReader(stream))
                 {
                     string jsonContent = reader.ReadToEnd();
                     var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-                    var mods = JsonSerializer.Deserialize<Dictionary<string, Mod>>(jsonContent, options)
-                               ?? new Dictionary<string, Mod>();
+                    var teams = JsonSerializer.Deserialize<Dictionary<string, ThunderstoreJSONContent>>(jsonContent, options)
+                               ?? new Dictionary<string, ThunderstoreJSONContent>();
 
-                    foreach (var entry in mods)
-                    {
-                        entry.Value.name = entry.Key;
-                    }
-
-                    return mods;
+                    return teams;
                 }
             }
         }

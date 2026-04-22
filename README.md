@@ -1,5 +1,5 @@
 # 📊 Mod Statistics
-**A unified C# solution for tracking mod analytics across multiple platforms.**
+**A program made for tracking mod analytics across multiple platforms.**
 
 Mod Statistics provides an easy-to-clone and highly customizable system to monitor your project's performance on **Thunderstore**, **Steam Workshop**, and **NexusMods**.
 
@@ -11,7 +11,7 @@ Please note this has support for github gists, github actions and also the need 
 
 1. **Clone the Repository**: Get a local copy of the code.
 2. **API Keys**: Ensure you have your API keys ready for the platforms you wish to track. 
-   > **Note:** These keys are used strictly for endpoint verification. The application does not collect or share this data.
+   > **Note:** These keys are used strictly for verification. The application does not collect or share this data.
 3. **Configure your Mods**: Edit the following JSON files to add or remove your mods:
    * `thunderstore.json`
    * `steam.json`
@@ -27,8 +27,8 @@ Please note this has support for github gists, github actions and also the need 
 
 ## 🛠 Features
 
-* **Platform Versatility**: Unified tracking for Thunderstore, Steam Workshop, and NexusMods.
-* **C#**: Built for performance and easy integration into existing .NET workflows.
+* **Platform Support**: Tracking for Thunderstore, Steam Workshop, and NexusMods.
+* **C#**: "Cus who doenst love C#?"
 * **JSON Configuration**: Simple, human-readable files for managing your mod list.
 
 ---

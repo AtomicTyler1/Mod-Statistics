@@ -21,7 +21,7 @@ Console.WriteLine("/// --- /// MOD STATISTICS /// --- ///");
 
 try
 {
-    var thunderstoreMods = Thunderstore.GetThunderstoreMods();
+    var thunderstoreTeams = Thunderstore.GetThunderstoreMods();
     var steamMods = SteamWorkshop.GetSteamWorkshop();
     var nexusMods = NexusMods.GetNexusMods();
 
@@ -31,30 +31,65 @@ try
     ulong totalRatings = 0;
     ulong totalRatingsBad = 0;
 
-    foreach (var entry in thunderstoreMods)
+    async IAsyncEnumerable<JsonElement> GetAllPages(string initialUrl)
     {
-        var match = Regex.Match(entry.Value.link, @"/p/([^/]+)/([^/]+)/?$");
-        var match2 = Regex.Match(entry.Value.link, @"/package/([^/]+)/([^/]+)/?$");
-        if ((match.Success || match2.Success) && getThunderstore)
+        string url = initialUrl;
+        while (url != null)
         {
-            if (match2.Success) { match = match2; }
-            string team = match.Groups[1].Value;
-            string pkg = match.Groups[2].Value;
-            string apiUrl = $"https://thunderstore.io/api/v1/package-metrics/{team}/{pkg}/";
-
-            var response = await client.GetStringAsync(apiUrl);
+            var response = await client.GetStringAsync(url);
             using var doc = JsonDocument.Parse(response);
-            var root = doc.RootElement;
 
-            entry.Value.Downloads = root.GetProperty("downloads").GetUInt64();
-            entry.Value.Ratings = (ulong)root.GetProperty("rating_score").GetInt32();
-            entry.Value.Version = root.GetProperty("latest_version").GetString() ?? "1.0.0";
+            foreach (var item in doc.RootElement.GetProperty("results").EnumerateArray())
+                yield return item.Clone();
 
-            totalDownloads += entry.Value.Downloads;
-            totalRatings += entry.Value.Ratings;
-            packageData[entry.Key] = entry.Value;
+            url = doc.RootElement.GetProperty("next").GetString();
+        }
+    }
 
-            Console.WriteLine($"[Thunderstore] {entry.Value.name} || Downloads: {entry.Value.Downloads}");
+    if (getThunderstore)
+    {
+        foreach (var entry in thunderstoreTeams)
+        {
+            var baseURL = "https://thunderstore.io/api/cyberstorm/listing";
+            foreach (var community in entry.Value.communities)
+            {
+                var url = $"{baseURL}/{community}/{entry.Key}";
+                var response = await client.GetStringAsync(url);
+                using var doc = JsonDocument.Parse(response);
+
+                await foreach(var item in GetAllPages(url))
+                {
+                    var versionRegex = new Regex(@"(?<=-)([\d\.]+)(?=\.png)");
+
+                    var version = versionRegex.Match(item.GetProperty("icon_url").GetString() ?? "");
+                    string extractedVersion = version.Success ? version.Value : "1.0.0";
+
+                    var ratings = item.GetProperty("rating_count").GetUInt64();
+                    var downloads = item.GetProperty("download_count").GetUInt64();
+
+                    var identifier = $"{entry.Key}-{item.GetProperty("name").GetString()}";
+
+                    var mod = new Mod
+                    {
+                        name = item.GetProperty("name").GetString() ?? "null",
+                        Downloads = downloads,
+                        Ratings = ratings,
+                        Version = extractedVersion,
+                        community = community,
+                        link = $"https://thunderstore.io/c/{community}/p/{entry.Key}/{item.GetProperty("name").GetString() ?? "null"}",
+                        platform = "Thunderstore",
+                        popular = entry.Value.popular_identifiers.Contains(identifier) ? "True" : "False",
+                        icon = item.GetProperty("icon_url").GetString() ?? "null"
+                    };
+
+                    totalDownloads += downloads;
+                    totalRatings += ratings;
+
+                    Console.WriteLine($"[Thunderstore]: Processed {identifier} || Downloads: {mod.Downloads} || Ratings: {mod.Ratings} || Popular: {mod.popular}");
+
+                    packageData[item.GetProperty("name").GetString()] = mod;
+                }
+            }
         }
     }
 

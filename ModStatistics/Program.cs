@@ -14,8 +14,8 @@ using HttpClient client = new HttpClient();
 client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Compatible; ModStats/1.0)");
 
 bool getThunderstore = true;
-bool getSteam = false;
-bool getNexus = false;
+bool getSteam = true;
+bool getNexus = true;
 
 Console.WriteLine("/// --- /// MOD STATISTICS /// --- ///");
 
